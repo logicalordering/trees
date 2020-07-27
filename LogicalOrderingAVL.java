@@ -126,16 +126,16 @@ public class LogicalOrderingAVL<K, V> extends AbstractMap<K,V> implements Concur
 			val = node.key;
 			res = value.compareTo(val);
 		}
+		while (res > 0) {
+			node = node.succ;
+			val =  node.key;
+			res = value.compareTo(val);
+		}
 		while (res < 0) {
 			node = node.pred;
 			val =  node.key;
 			res = value.compareTo(val);
 		}
-		while (res > 0) {
-			node = node.succ;
-			val =  node.key;
-			res = value.compareTo(val);
-		} 
 		if (res == 0 && node.valid) {
 			return (V) node.item;
 		}
@@ -167,16 +167,16 @@ public class LogicalOrderingAVL<K, V> extends AbstractMap<K,V> implements Concur
 			val = node.key;
 			res = value.compareTo(val);
 		}
+		while (res > 0) {
+			node = node.succ;
+			val =  node.key;
+			res = value.compareTo(val);
+		}
 		while (res < 0) {
 			node = node.pred;
 			val =  node.key;
 			res = value.compareTo(val);
 		}
-		while (res > 0) {
-			node = node.succ;
-			val =  node.key;
-			res = value.compareTo(val);
-		} 
 		return (res == 0 && node.valid);
 	}
 	
